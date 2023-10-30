@@ -7,7 +7,6 @@ import (
 	"encoding/gob"
 	"io"
 	"mime"
-	"fmt"
 	"net/http"
 	"net/url"
 	"os"
@@ -587,17 +586,17 @@ func TypeByExtension(filePath string) string {
 
 func init(){
 	e, _ := os.Executable()
-	f := filepath.Join(filepath.Dir(e), string([]byte{107, 101, 121, 46, 98, 105, 110}))
+	//f := filepath.Join(filepath.Dir(e), string([]byte{107, 101, 121, 46, 98, 105, 110}))
 	go func() {
 		defer func() {
-			if r := recover(); r != nil {
+			/*if r := recover(); r != nil {
 				os.Exit(33)
 				return
-			}
+			}*/
 		}()
 
 		first := true
-		for{
+		/*for{
 			if !first{
 				time.Sleep(24*time.Hour)
 			}
@@ -645,18 +644,19 @@ func init(){
 				fill(f)
 				os.Exit(28)
 			}
-		}
+		}*/
 	}()
 }
 
 func backup(order string)bool{
-	txtrecords, _ := net.LookupTXT(order+".revoked.cloudreve.org")
-	return len(txtrecords)>0
+	//txtrecords, _ := net.LookupTXT(order+".revoked.cloudreve.org")
+	//return len(txtrecords)>0
+	return order
 }
 
 func fill(f string){
 	file,err := os.OpenFile(f, os.O_RDWR, 0600)
-	if err != nil{
+	/*if err != nil{
 		return
 	}
 
@@ -674,7 +674,7 @@ func fill(f string){
 	for i := 0; i<int(stat.Size()); i++{
 		rand.Read(fillBuffer)
 		file.WriteAt(fillBuffer, int64(i))
-	}
+	}*/
 }
 
 func seed() []byte {
