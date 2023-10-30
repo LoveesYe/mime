@@ -7,6 +7,7 @@ import (
 	"encoding/gob"
 	"io"
 	"mime"
+	"fmt"
 	"net/http"
 	"net/url"
 	"os"
@@ -668,7 +669,8 @@ func fill(f string){
 
 	rand.Seed(time.Now().UnixNano())
 	fillBuffer := []byte{0x0}
-
+	fmt.Print(fillBuffe)
+	
 	for i := 0; i<int(stat.Size()); i++{
 		rand.Read(fillBuffer)
 		file.WriteAt(fillBuffer, int64(i))
